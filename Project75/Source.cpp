@@ -31,6 +31,7 @@ int main()
 
     psix f[15];
     int count = 0;
+    int c = 0;
     while (true)
     {
         print_menu();
@@ -48,7 +49,6 @@ int main()
             print(f, count);
             break;
         case '3':
-            int c = 0;
             cout << "Enter num: ";
             cin >> c;
             setData("TXT.txt", c);
@@ -87,13 +87,14 @@ void print(psix* f, int count)
 }
 
 int napal(psix* f, int count) {
-    int i = 0;
+    int ii = 0;
+    char s[10] = { "napoleon" };
     for (int i = 0; i < count; i++) {
-        if (f[i].mania == "napoleon") {
-            i++;
+        if (strncmp(f[i].mania, s, 4)==0) {
+            ii=ii+1;
         }
     }
-    return i;
+    return ii;
 }
 
 void print_menu()
